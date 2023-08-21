@@ -1,6 +1,8 @@
+import ContactForm from "../../components/contact-form";
+
 const Page = () => (
   <div className="h-screen flex flex-col items-center">
-    <div className="h-auto">Products</div>
+    <ContactForm />
   </div>
 );
 
