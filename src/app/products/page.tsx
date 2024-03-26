@@ -14,6 +14,7 @@ const Page = async () => {
       <ul className="flex flex-row">
         {products.map(({ id, name, price, description }) => (
           <ProductCard
+            key={id}
             id={id}
             name={name}
             price={price}
