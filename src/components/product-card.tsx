@@ -17,21 +17,19 @@ export const ProductCard = ({ id, name, price, description }: Product) => {
     <div className="flex flex-col">
       <li
         key={id}
-        className="p-3 border-solid border-2 border-slate-500 rounded m-3 cursor-pointer hover:scale-105 flex flex-col"
+        className="p-3 shadow-md m-3 cursor-pointer hover:scale-105 flex flex-col"
+        onClick={() => {
+          cart?.addProduct({ id, name, price, description });
+          setShowConfirmation(true);
+          setTimeout(() => {
+            setShowConfirmation(false);
+          }, 1000);
+        }}
       >
         <h2 className="font-medium pb-5">{name}</h2>
         <p>Price: {price} €</p>
         <p>Description: {description}</p>
-        <button
-          className="bg-slate-500 text-white px-5 mt-4"
-          onClick={() => {
-            cart?.addProduct({ id, name, price, description });
-            setShowConfirmation(true);
-            setTimeout(() => {
-              setShowConfirmation(false);
-            }, 1000);
-          }}
-        >
+        <button className="bg-slate-500 text-white px-5 mt-4">
           Add to cart
         </button>
       </li>

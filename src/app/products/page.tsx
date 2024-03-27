@@ -11,7 +11,7 @@ const Page = async () => {
 
   return (
     <div className="h-screen flex flex-col items-center">
-      <ul className="flex flex-row">
+      <ul className="flex flex-row py-4">
         {products.map(({ id, name, price, description }) => (
           <ProductCard
             key={id}
