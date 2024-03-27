@@ -10,7 +10,7 @@ const Page = async () => {
   const products: Product[] = JSON.parse(file);
 
   return (
-    <div className="h-screen flex flex-col items-center px-5 py-10">
+    <div className="h-screen flex flex-col items-center">
       <ul className="flex flex-row">
         {products.map(({ id, name, price, description }) => (
           <ProductCard
